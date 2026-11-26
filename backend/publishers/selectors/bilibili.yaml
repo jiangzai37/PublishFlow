@@ -1,0 +1,52 @@
+editor_url: https://member.bilibili.com/platform/upload/video/fans
+home_url: https://member.bilibili.com/platform/home
+upload_selectors:
+  - 'input[type="file"][accept*="video"]'
+  - 'input[type="file"]'
+upload_success_selectors:
+  - 'text=上传完成'
+  - 'text=上传成功'
+upload_error_selectors:
+  - 'text=上传失败'
+  - 'text=文件过大'
+  - 'text=格式不支持'
+title_selectors:
+  - 'input[placeholder*="标题"]'
+  - 'textarea[placeholder*="标题"]'
+body_selectors:
+  - '[contenteditable="true"][data-placeholder*="简介"]'
+  - '[contenteditable="true"]'
+cover_upload_selectors:
+  - 'input[type="file"][accept*="image"]'
+  - 'input[type="file"]'
+tag_selectors:
+  - 'input[placeholder*="话题"]'
+  - 'input[placeholder*="标签"]'
+partition_selectors:
+  - '[class*="partition"]:has-text("分区")'
+  - 'text=分区'
+collection_selectors:
+  - '[class*="collection"]:has-text("合集")'
+  - 'text=合集'
+publish_selectors:
+  - 'button:has-text("立即投稿")'
+  - 'button:has-text("提交稿件")'
+  - 'button:has-text("提交")'
+confirm_selectors:
+  - 'button:has-text("确认投稿")'
+  - 'button:has-text("确认提交")'
+  - 'button:has-text("确认")'
+manual_markers:
+  - '验证码'
+  - '滑动验证'
+  - '安全验证'
+  - '请完成验证'
+  - '人机验证'
+success_selectors:
+  - 'text=投稿成功'
+  - 'text=稿件已提交'
+  - 'text=审核中'
+nickname_selectors:
+  - '[class*="username"]'
+  - '[class*="nickname"]'
+  - '[class*="user-name"]'

@@ -1,0 +1,7 @@
+{
+  "id": "fresh",
+  "name": "清新纸感",
+  "description": "轻盈留白、柔和墨色，适合公众号与生活方式内容。",
+  "platform_hint": "wechat",
+  "style_json": "{\"fontFamily\":\"'Noto Serif SC','Songti SC',serif\",\"fontSize\":16,\"lineHeight\":1.9,\"paragraphSpacing\":18,\"accent\":\"#a44732\",\"headingStyle\":\"left-border\",\"quoteStyle\":\"paper\",\"firstImageRule\":\"cover\",\"tailText\":\"感谢阅读，愿每一次表达都有回响。\"}"
+}

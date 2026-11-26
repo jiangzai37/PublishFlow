@@ -1,0 +1,32 @@
+services:
+  publishflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: publishflow:0.5.0
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      APP_HOST: 0.0.0.0
+      APP_PORT: "8765"
+      PUBLISHING_ENABLED: "false"
+      ALLOWED_HOSTS: "127.0.0.1,localhost"
+      DATA_DIR: /data
+      UPLOAD_DIR: /uploads
+    ports:
+      - "127.0.0.1:${HOST_PORT:-8765}:8765"
+    volumes:
+      - publishflow_data:/data
+      - publishflow_uploads:/uploads
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  publishflow_data:
+  publishflow_uploads:

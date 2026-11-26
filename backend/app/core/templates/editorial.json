@@ -1,0 +1,7 @@
+{
+  "id": "editorial",
+  "name": "知乎思辨",
+  "description": "严谨标题、清晰段落与克制引用，适合知识型长文。",
+  "platform_hint": "zhihu",
+  "style_json": "{\"fontFamily\":\"'Noto Sans SC','Microsoft YaHei',sans-serif\",\"fontSize\":16,\"lineHeight\":1.85,\"paragraphSpacing\":16,\"accent\":\"#315d70\",\"headingStyle\":\"numbered\",\"quoteStyle\":\"line\",\"firstImageRule\":\"optional\",\"tailText\":\"以上为个人经验与观察，欢迎理性讨论。\"}"
+}

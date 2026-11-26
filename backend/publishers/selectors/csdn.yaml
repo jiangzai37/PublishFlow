@@ -1,0 +1,26 @@
+editor_url: https://editor.csdn.net/md/
+title_selectors:
+  - 'input[placeholder*="标题"]'
+  - '#title'
+  - 'textarea[placeholder*="标题"]'
+body_selectors:
+  - '.markdown-editor .content[contenteditable="true"]'
+  - '.editor-content[contenteditable="true"]'
+  - '[contenteditable="true"][data-placeholder*="正文"]'
+  - '[contenteditable="true"]'
+tag_selectors:
+  - '#tag-btn'
+  - 'button:has-text("添加标签")'
+  - '[class*="tag"]:has-text("标签")'
+publish_selectors:
+  - 'button:has-text("发布文章")'
+  - 'button:has-text("发布")'
+  - '[class*="publish"]:has-text("发布")'
+manual_markers:
+  - '验证码'
+  - '滑动验证'
+  - '安全验证'
+  - '请完成验证'
+success_selectors:
+  - ':has-text("发布成功")'
+  - ':has-text("审核通过")'
