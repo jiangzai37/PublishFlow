@@ -1,14 +1,31 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-where uv >nul 2>nul || (echo 未找到 uv，请先安装 uv。 & pause & exit /b 1)
-where npm >nul 2>nul || (echo 未找到 npm，请先安装 Node.js 22+。 & pause & exit /b 1)
+set "PATH=%USERPROFILE%\.local\bin;E:\AI\tools\_bin;E:\node.js;%PATH%"
+set "UV=%USERPROFILE%\.local\bin\uv.exe"
+if not exist "%UV%" set "UV=E:\AI\tools\_bin\uv.exe"
+if not exist "%UV%" for %%I in (uv.exe) do set "UV=%%~$PATH:I"
+if not exist "%UV%" (
+  echo uv was not found. Install uv or add it to PATH.
+  pause
+  exit /b 1
+)
+set "NPM=E:\node.js\npm.cmd"
+if not exist "%NPM%" (
+  where npm
+  if errorlevel 1 (
+    echo npm was not found. Install Node.js 22+ or add it to PATH.
+    pause
+    exit /b 1
+  )
+  set "NPM=npm.cmd"
+)
 if not exist ".venv" (
-  uv venv .venv
-  uv pip install --python .venv\Scripts\python.exe -r backend\requirements.txt
+  "%UV%" venv .venv
+  "%UV%" pip install --python .venv\Scripts\python.exe -r backend\requirements.txt
 )
 if not exist "frontend\node_modules" (
-  npm --prefix frontend ci
+  call "%NPM%" --prefix frontend ci
 )
 .venv\Scripts\python.exe scripts\dev.py
 set "exit_code=%errorlevel%"
